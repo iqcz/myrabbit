@@ -12,10 +12,11 @@ import com.lee.myrabbit.service.IMessageService;
 @ContextConfiguration(locations = {"classpath:spring/spring-producer.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestProducer {
-	@Resource
-	private IMessageService messageService ;
-	@Test
-	public void testSend() {
-		this.messageService.send("[*** 消息生产者 ***] - " + System.currentTimeMillis());
-	}
+    @Resource
+    private IMessageService messageService;
+
+    @Test
+    public void testSend() {
+        this.messageService.send("[*** 消息生产者 ***] - " + System.currentTimeMillis());
+    }
 }
