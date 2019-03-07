@@ -8,7 +8,8 @@ import com.rabbitmq.client.MessageProperties;
 public class MessageProducer {
     private static final String EXCHANGE_NAME = "lee.msg.topic";
     private static final String HOST = "127.0.0.1";
-    private static final Integer PORT = 5672; // 消息服务的端口号，注意一定要与管理界面的15672区分开。
+    // 消息服务的端口号，注意一定要与管理界面的15672区分开。
+    private static final Integer PORT = 5672;
 
     public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
