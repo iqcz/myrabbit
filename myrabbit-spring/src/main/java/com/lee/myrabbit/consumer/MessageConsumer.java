@@ -5,6 +5,7 @@ import org.springframework.amqp.core.MessageListener;
 
 /**
  * 消费者实现Spring的MessageListener接口
+ * @author i324779
  */
 public class MessageConsumer implements MessageListener {
 

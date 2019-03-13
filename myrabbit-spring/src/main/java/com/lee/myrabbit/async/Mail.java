@@ -1,8 +1,6 @@
 package com.lee.myrabbit.async;
 
 
-import com.google.common.base.MoreObjects;
-
 /**
  * @author i324779
  */
