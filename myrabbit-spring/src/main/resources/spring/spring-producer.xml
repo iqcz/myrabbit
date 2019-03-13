@@ -4,8 +4,8 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:rabbit="http://www.springframework.org/schema/rabbit"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.7.xsd">
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.7.xsd">
     <context:component-scan base-package="com.lee"/>
     <!-- 定义rabbitmq配置的相关属性文件信息 -->
     <context:property-placeholder location="classpath:rabbitmq.properties"/>
@@ -16,11 +16,9 @@
     <!-- 所有的连接工厂要求被RabbitMQ所管理 -->
     <rabbit:admin connection-factory="connectionFactory"/>
     <!-- 创建一个队列信息 -->
-    <rabbit:queue id="myQueue" durable="true" auto-delete="true"
-                  exclusive="false" name="lee.queue.title"/>
+    <rabbit:queue id="myQueue" auto-delete="true" name="lee.queue.title"/>
     <!-- 下面实现一个直连的操作模式 -->
-    <rabbit:direct-exchange id="mq-direct"
-                            name="${mq.rabbit.exchange}" durable="true" auto-delete="true">
+    <rabbit:direct-exchange id="mq-direct" name="${mq.rabbit.exchange}" auto-delete="true">
         <rabbit:bindings>
             <!-- 现在要求绑定到指定的队列之中 -->
             <rabbit:binding queue="myQueue" key="lee-key"/>
